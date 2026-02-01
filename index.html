@@ -611,28 +611,6 @@ layout: default
     </span>
 </div>
 
-<div id="Awards" class='xtitle'>Awards & Honors</div>
-<ul class="news" style="line-height: 2em; overflow-y:auto; height: 250px">
-    <li> <b>The Frederick K. Errington Prize</b> (2025) <div style="float: right;"></div>
-    </li>
-    <li> <b>Fulbright Nepal Semifinalist Award</b> (2025) <div style="float: right;"></div>
-    </li>
-    <li> <b>Riverwoods Scholarship Award</b> (2023-2025) <div style="float: right;"></div>
-    </li>
-    <li> <b>ABRCMS Poster Presentation Award</b> (2024) <div style="float: right;"></div>
-    </li>
-    <li> <b>ABRCMS Full Travel Award</b> (2024) <div style="float: right;"></div>
-    </li>
-    <li> <b>Trinity College Summer Research Grant</b> (2022, 2023) <div style="float: right;"></div>
-    </li>
-    <li> <b>Thomas and Charlotte Valentine Taylor Educational Foundation Award</b> (2021-2025) <div
-            style="float: right;"></div>
-    </li>
-    <li> <b>Dixon Turcott Educational Fund of the New Hampshire Charitable Foundation Award</b> (2021-2025) <div
-            style="float: right;"></div>
-    </li>
-</ul>
-
 <div id="Education" class='xtitle'> Education </div>
 <ul class="news" style="line-height: 2em; height: auto !important;">
     <li><b>Trinity College</b>, Hartford, CT <div style="float: right;">May 2025 </div><br>
@@ -640,26 +618,11 @@ layout: default
     </li>
 </ul>
 
-<div id="Experience" class='xtitle'> Experience </div>
+<div id="Work" class='xtitle'> Work Experience </div>
 <ul class="news" style="line-height: 2em; height: auto !important;">
     <li><b>Tufts Medical Center</b>, Clinical Research Coordinator I <div style="float: right;">July 2025 - Jan 2026
         </div><br>
         Oversee research project design and implementation of three studies within Ophthalmology Department.
-    </li>
-    <li><b>The Jackson Lab</b>, Academic Year Fellow <div style="float: right;">Sept 2024 – May 2025</div><br>
-        Working in the Carter Lab under mentorship of Dr. Tamar Abel and Dr. Robert Valenzuela studying the CETP variant
-        using the All of Us dataset.
-    </li>
-    <li><b>Perception Lab</b>, Research Assistant <div style="float: right;">May 2023 - May 2025</div><br>
-        Created a computational pipeline using Psychopy to measure pupil area changes. researching boredom using deep
-        learning models.
-    </li>
-    <li><b>Hartford Hospital - Ayers Neuroscience Center</b>, Research Assistant <div style="float: right;">May 2023 -
-            May 2025</div><br>
-        Data entry for 200+ epilepsy patients, streamlining information into Cranial Cloud.
-    </li>
-    <li><b>The Jackson Lab</b>, Summer Intern <div style="float: right;">June 2024 – Sept 2024</div><br>
-        Applied computational pipeline to understand biological processes for late-onset Alzheimer’s Disease.
     </li>
     <li><b>Shari M Roth Md Llc</b>, Ophthalmologist Assistant <div style="float: right;">Sept 2024 - Dec 2024</div><br>
         Conduct visual field and OCT testing.
@@ -673,12 +636,51 @@ layout: default
     </li>
 </ul>
 
+<div id="Experience" class='xtitle'> Research Experience </div>
+<ul class="news" style="line-height: 2em; height: auto !important;">
+    <li><b>The Jackson Lab</b>, Academic Year Fellow <div style="float: right;">Sept 2024 – May 2025</div><br>
+        Working in the Carter Lab under mentorship of Dr. Tamar Abel and Dr. Robert Valenzuela studying the CETP variant
+        using the All of Us dataset.
+    </li>
+    <li><b>Anthropology Department</b>, Lead Researcher <div style="float: right;">Sept 2024 - May 2025</div><br>
+        Investigated menstrual inequity at Trinity College by examining current menstrual equity initiatives and their
+        impact on addressing period poverty through interviews and spatial analysis. Submitted an IRB proposal and did
+        an in-depth literary analysis of menstrual inequity.
+    </li>
+    <li><b>Perception Lab</b>, Research Assistant <div style="float: right;">May 2023 - May 2025</div><br>
+        Created a computational pipeline using Psychopy to measure pupil area changes. researching boredom using deep
+        learning models.
+    </li>
+    <li><b>Hartford Hospital - Ayers Neuroscience Center</b>, Research Assistant <div style="float: right;">May 2023 -
+            May 2025</div><br>
+        Data entry for 200+ epilepsy patients, streamlining information into Cranial Cloud.
+    </li>
+    <li><b>Anthropology Department</b>, Research Assistant <div style="float: right;">Jan 2023 - May 2023</div><br>
+        Conducted object analysis study on Chinese Object Assemblage, as well as learning about Chinese History and
+        Culture.
+    </li>
+    <li><b>Connecticut’s Children Hospital</b>, Petit Fellow <div style="float: right;">Sept 2022 - Dec 2022</div><br>
+        Studied injury and violence prevention with Connecticut Children’s experts and virtually shadowed staff members
+        in different clinical areas throughout Connecticut Children’s. Presented a research proposal on intimate partner
+        violence in South Asian communities to hospital administration, recommending potential initiatives for
+        implementation as a Petit Fellow.
+    </li>
+    <li><b>Ketogenic Lab</b>, Research Assistant <div style="float: right;">May 2022 - July 2022</div><br>
+        Manipulated levels of adenosine kinase to control amounts of adenosine present to see the effects of pain
+        sensitivity and aggression through social dominance and hot plate tests on mice of different genders, weights,
+        and genotypes.
+    </li>
+    <li><b>The Jackson Lab</b>, Summer Intern <div style="float: right;">June 2024 – Sept 2024</div><br>
+        Applied computational pipeline to understand biological processes for late-onset Alzheimer’s Disease.
+    </li>
+</ul>
 
 <div id="Publications" class='xtitle'> Publications
 </div>
 <div class="posts">
     {% for post in site.posts %}
-
+    {% if post.journal != "Poster Presentation" and post.journal != "Oral Presentation" and post.journal != "Website
+    Feature" %}
     {% if post.highlight %}
     <article class="post">
 
@@ -716,7 +718,7 @@ layout: default
 
                 {% if post.project%}
                 /
-                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Project Page</a>
+                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Website</a>
                 {% endif %}
 
                 {% if post.code%}
@@ -733,8 +735,31 @@ layout: default
         <div style="clear:both"></div>
     </article>
     {% endif %}
+    {% endif %}
     {% endfor %}
 </div>
+
+<div id="Awards" class='xtitle'>Awards & Honors</div>
+<ul class="news" style="line-height: 2em; overflow-y:auto; height: 250px">
+    <li> <b>The Frederick K. Errington Prize</b> (2025) <div style="float: right;"></div>
+    </li>
+    <li> <b>Fulbright Nepal Semifinalist Award</b> (2025) <div style="float: right;"></div>
+    </li>
+    <li> <b>Riverwoods Scholarship Award</b> (2023-2025) <div style="float: right;"></div>
+    </li>
+    <li> <b>ABRCMS Poster Presentation Award</b> (2024) <div style="float: right;"></div>
+    </li>
+    <li> <b>ABRCMS Full Travel Award</b> (2024) <div style="float: right;"></div>
+    </li>
+    <li> <b>Trinity College Summer Research Grant</b> (2022, 2023) <div style="float: right;"></div>
+    </li>
+    <li> <b>Thomas and Charlotte Valentine Taylor Educational Foundation Award</b> (2021-2025) <div
+            style="float: right;"></div>
+    </li>
+    <li> <b>Dixon Turcott Educational Fund of the New Hampshire Charitable Foundation Award</b> (2021-2025) <div
+            style="float: right;"></div>
+    </li>
+</ul>
 
 <div id="Skills" class='xtitle'> Skills & Interests </div>
 <ul style='line-height: 2em; margin-top:0px'>
@@ -742,18 +767,4 @@ layout: default
     <li> <b>Languages:</b> Nepali (fluent), Spanish (intermediate) </li>
     <li> <b>Interests:</b> Boxing, Crocheting, Reading, Painting </li>
     <li> <b>Certifications:</b> Certified Nursing Assistant (2021-Present) </li>
-</ul>
-
-<div id="Misc" class='xtitle'> Activities </div>
-<ul style='list-style: none;line-height: 2em;padding-left: 0; margin-top:0px'>
-    <li><b>NH Food Bank</b>, Volunteer</li>
-    <li><b>Friends of MSF</b>, Vice-President</li>
-    <li><b>JELLO</b>, Eboard</li>
-    <li><b>Neuroscience Club</b>, Co-President</li>
-    <li><b>Underrepresented Students in Neuroscience Mentorship</b>, Mentor <div style="float: right;">Sept 2023 - May
-            2024</div>
-    </li>
-    <li><b>Club Boxing</b>, Mentoring/Tutoring Coordinator</li>
-    <li><b>CHER</b>, Tutor</li>
-    <li><b>South Asian Student Association</b>, Co-President</li>
 </ul>
