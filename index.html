@@ -147,8 +147,8 @@ layout: default
 
     b {
         font-weight: 700;
-        background-color: var(--accent-pink);
-        /* 强调文字改为粉色背景 */
+        background-color: var(--accent-soft-pink);
+        /* 强调文字改为淡绿色背景 */
         padding: 0 4px;
         color: #000 !important;
         margin: 0 5px;
@@ -317,8 +317,8 @@ layout: default
 
     /* Lab/Recruitment Box */
     .highlight-box {
-        background-color: var(--accent-lavender) !important;
-        /* 实验室框改为淡紫色 */
+        background-color: var(--accent-soft-pink) !important;
+        /* 实验室框改为浅绿色 */
         color: #000 !important;
         border: var(--primary-border) !important;
         box-shadow: var(--hard-shadow);
@@ -593,7 +593,7 @@ layout: default
 
 <div class="intro-text">
     I am a recent graduate from <a href="https://www.trincoll.edu/">Trinity College</a> (May 2025) with a B.S. in
-    Neuroscience and B.A. in Anthropology. I am a Thomas and Charlotte Valentine Taylor Educational Foundation Scholar.
+    Neuroscience and B.A. in Anthropology.
     <br><br>
     My research interests lie at the intersection of neuroscience and psychology, with a focus on computational
     pipelines, deep learning models, and biological processes related to Alzheimer's Disease. I have extensive
@@ -603,7 +603,7 @@ layout: default
 
 </div>
 
-<div class="highlight-box" style="background-color:#efefef;color:#333; border: 2px solid #333; padding:5px;">
+<div class="highlight-box">
     <span>
         <b>Research Interests:</b> Visual Computing, Computational Neuroscience, Alzheimer's Disease, Clinical
         Psychology.
@@ -617,45 +617,96 @@ layout: default
     </li>
 </ul>
 
-<div id="Work" class='xtitle'> Work Experience </div>
-<ul class="news" style="line-height: 2em; height: auto !important;">
-    <li><b>Tufts Medical Center</b>, Clinical Research Coordinator I <div style="float: right;">July 2025 - Jan 2026
-        </div><br>
-        <ul style="padding-left: 20px; list-style-type: disc;">
-            <li>Oversee research project design and implementation of three studies within Ophthalmology Department.
-            </li>
-            <li>Handled participant recruitment, informed consent, data collection, data entry & documentation for each
-                study.</li>
-            <li>Assessed and reviewed potential patients and eligibility for inclusion in a particular protocol based on
-                protocol requirements.</li>
-        </ul>
+<div id="Publications" class='xtitle'> Publications
+</div>
+<div class="posts">
+    {% for post in site.posts %}
+    {% if post.journal != "Poster Presentation" and post.journal != "Oral Presentation" and post.journal != "Website
+    Feature" %}
+    {% if post.highlight %}
+    <article class="post">
+
+        {% if post.teaser %}
+        <div class="teaser-container">
+            <img class="teaser-left" src="{{post.teaser}}">
+        </div>
+        {% endif %}
+
+        <div class="post-content-wrapper">
+            <div class="entry" style="font-size: 14px; line-height: 1.4;">
+                {{ post.authors }}. "<b>{{ post.title }}</b>." <i>{{ post.publication }}</i>, {{ post.year }}{% if
+                post.journal %} / <i>{{ post.journal }}</i>{% endif %}.
+                <br>
+                <i
+                    style='display:inline-block;margin-top: 5px; color: #d63031; font-weight:bold;'>{{post.highlight_reason}}</i>
+            </div>
+
+            <div class="entry user-info" style="margin-top: 10px;">
+                {% if post.arxiv%}
+                <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
+                {% endif %}
+
+                {% if post.demo%}
+                <a class='links' target="_blank" href="{{ post.demo }}" rel="paperurl">Online Demo</a>
+                {% endif %}
+
+                {% if post.project%}
+                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Website</a>
+                {% endif %}
+
+                {% if post.code%}
+                <a class='links' target="_blank" href="{{post.code}}">Github</a>
+                {% endif %}
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </article>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+<div id="Conferences" class='xtitle'> Conferences </div>
+<ul class="news" style="line-height: 2em;">
+    <li><b>Vision Sciences Society (VSS)</b>, May 16-22, 2025<br>
+        <i>"Luminance matching in cognitive pupillometry is not enough: The curious case of orientation"</i>
     </li>
-    <li><b>Riverwoods Manchester</b>, Licensed Nursing Assistant <div style="float: right;">June 2021 – Jan 2025</div>
-        <br>
-        <ul style="padding-left: 20px; list-style-type: disc;">
-            <li>Recorded vital signs of numerous residents, administered therapeutic treatments, and followed
-                individualized care plan for more than 50 residents.</li>
-            <li>Accumulated over 1,000 clinical hours while collaborating closely with co-workers to ensure quality
-                care.</li>
-        </ul>
+    <li><b>Object Perception, Attention, and Memory (OPAM)</b>, November 21, 2024<br>
+        <i>"The predictive pupil: Does implicitly signaling the prior probability of an abrupt onset modulate pupil
+            area?"</i>
     </li>
-    <li><b>Shari M Roth Md Llc</b>, Ophthalmologist Assistant <div style="float: right;">Sept 2024 - Dec 2024</div><br>
-        <ul style="padding-left: 20px; list-style-type: disc;">
-            <li>Conducted visual field and OCT test on patients with glaucoma and macular degeneration.</li>
-            <li>Gained a total of 45 clinical hours.</li>
-        </ul>
+    <li><b>ABRCMS</b>, November 13-16, 2024<br>
+        <i>"Alzheimer’s age-dependent molecular signatures in individuals with the loss of function CETP I405V
+            variant"</i>
     </li>
-    <li><b>Trinity College</b>, Lab Teacher’s Assistant <div style="float: right;">Sept 2022 - May 2024</div><br>
-        <ul style="padding-left: 20px; list-style-type: disc;">
-            <li>Facilitated learning for a diverse group of 18 students as a Teaching Assistant for Intro Chemistry I &
-                II by providing expert guidance and feedback during experiments.</li>
-            <li>Graded assignments and provided assignment feedback.</li>
-        </ul>
+    <li><b>Vision Sciences Society (VSS)</b>, May 16-22, 2024<br>
+        <i>"Deep learning and the allocation of covert exogenous spatial attention"</i>
+    </li>
+    <li><b>NEURON</b>, April 21, 2024<br>
+        <i>"Deep learning and the allocation of covert exogenous spatial attention"</i>
+    </li>
+    <li><b>AYF Symposium, The Jackson Laboratory</b>, May 2025<br>
+        <i>"Phenome wide associations in individuals with CETP loss of function variants"</i>
+    </li>
+    <li><b>Summer Research Symposium, Trinity College</b>, September 2024<br>
+        <i>"Alzheimer’s age-dependent molecular signatures in individuals with the loss of function CETP I405V
+            variant"</i>
+    </li>
+    <li><b>The Jackson Laboratory</b>, August 8, 2024<br>
+        <i>"Alzheimer’s age-dependent molecular signatures in individuals with the loss of function CETP I405V
+            variant"</i>
+    </li>
+    <li><b>Summer Research Symposium, Trinity College</b>, September 21, 2023<br>
+        <i>"Pupillometry Reliably Indicates the Modulatory Effects of Covert Exogenous Cues"</i>
+    </li>
+    <li><b>Summer Research Symposium, Trinity College</b>, September 21, 2022<br>
+        <i>"Effects of Manipulating Adenosine on Mouse Behavior"</i>
     </li>
 </ul>
 
+
 <div id="Experience" class='xtitle'> Research Experience </div>
-<ul class="news" style="line-height: 2em; height: auto !important;">
+<ul class="news" style="line-height: 2em;">
     <li><b>Perception Lab</b>, Research Assistant <div style="float: right;">May 2023 - May 2025</div><br>
         <ul style="padding-left: 20px; list-style-type: disc;">
             <li>Created a computational pipeline and measured the change of pupil area with eye tracker when a
@@ -718,54 +769,43 @@ layout: default
     </li>
 </ul>
 
-<div id="Publications" class='xtitle'> Publications
-</div>
-<div class="posts">
-    {% for post in site.posts %}
-    {% if post.journal != "Poster Presentation" and post.journal != "Oral Presentation" and post.journal != "Website
-    Feature" %}
-    {% if post.highlight %}
-    <article class="post">
+<div id="Work" class='xtitle'> Work Experience </div>
+<ul class="news" style="line-height: 2em;">
+    <li><b>Tufts Medical Center</b>, Clinical Research Coordinator I <div style="float: right;">July 2025 - Jan 2026
+        </div><br>
+        <ul style="padding-left: 20px; list-style-type: disc;">
+            <li>Oversee research project design and implementation of three studies within Ophthalmology Department.
+            </li>
+            <li>Handled participant recruitment, informed consent, data collection, data entry & documentation for each
+                study.</li>
+            <li>Assessed and reviewed potential patients and eligibility for inclusion in a particular protocol based on
+                protocol requirements.</li>
+        </ul>
+    </li>
+    <li><b>Riverwoods Manchester</b>, Licensed Nursing Assistant <div style="float: right;">June 2021 – Jan 2025</div>
+        <br>
+        <ul style="padding-left: 20px; list-style-type: disc;">
+            <li>Recorded vital signs of numerous residents, administered therapeutic treatments, and followed
+                individualized care plan for more than 50 residents.</li>
+            <li>Accumulated over 1,000 clinical hours while collaborating closely with co-workers to ensure quality
+                care.</li>
+        </ul>
+    </li>
+    <li><b>Shari M Roth Md Llc</b>, Ophthalmologist Assistant <div style="float: right;">Sept 2024 - Dec 2024</div><br>
+        <ul style="padding-left: 20px; list-style-type: disc;">
+            <li>Conducted visual field and OCT test on patients with glaucoma and macular degeneration.</li>
+            <li>Gained a total of 45 clinical hours.</li>
+        </ul>
+    </li>
+    <li><b>Trinity College</b>, Lab Teacher’s Assistant <div style="float: right;">Sept 2022 - May 2024</div><br>
+        <ul style="padding-left: 20px; list-style-type: disc;">
+            <li>Facilitated learning for a diverse group of 18 students as a Teaching Assistant for Intro Chemistry I &
+                II by providing expert guidance and feedback during experiments.</li>
+            <li>Graded assignments and provided assignment feedback.</li>
+        </ul>
+    </li>
+</ul>
 
-        {% if post.teaser %}
-        <div class="teaser-container">
-            <img class="teaser-left" src="{{post.teaser}}">
-        </div>
-        {% endif %}
-
-        <div class="post-content-wrapper">
-            <div class="entry" style="font-size: 14px; line-height: 1.4;">
-                {{ post.authors }}. "<b>{{ post.title }}</b>." <i>{{ post.publication }}</i>, {{ post.year }}{% if
-                post.journal %} / <i>{{ post.journal }}</i>{% endif %}.
-                <br>
-                <i
-                    style='display:inline-block;margin-top: 5px; color: #d63031; font-weight:bold;'>{{post.highlight_reason}}</i>
-            </div>
-
-            <div class="entry user-info" style="margin-top: 10px;">
-                {% if post.arxiv%}
-                <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
-                {% endif %}
-
-                {% if post.demo%}
-                <a class='links' target="_blank" href="{{ post.demo }}" rel="paperurl">Online Demo</a>
-                {% endif %}
-
-                {% if post.project%}
-                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Website</a>
-                {% endif %}
-
-                {% if post.code%}
-                <a class='links' target="_blank" href="{{post.code}}">Github</a>
-                {% endif %}
-            </div>
-        </div>
-        <div style="clear:both"></div>
-    </article>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</div>
 
 <div id="Awards" class='xtitle'>Awards & Honors</div>
 <ul class="news" style="line-height: 2em; overflow-y:auto; height: 250px">
@@ -792,7 +832,7 @@ layout: default
 <div id="Skills" class='xtitle'> Skills & Interests </div>
 <ul style='line-height: 2em; margin-top:0px'>
     <li> <b>Computer Skills:</b> PsychoPy, Rstudio, JASP, PyTorch </li>
-    <li> <b>Languages:</b> Nepali (fluent), Spanish (intermediate) </li>
-    <li> <b>Interests:</b> Boxing, Crocheting, Reading, Painting </li>
-    <li> <b>Certifications:</b> Certified Nursing Assistant (2021-Present) </li>
+    <li> <b>Languages:</b> Nepali (fluent), Korean (fluent) </li>
+    <li> <b>Interests:</b> Sourdough, Crocheting, Reading, Painting </li>
+    <li> <b>Certifications:</b> Certified Nursing Assistant (2021-2025) </li>
 </ul>

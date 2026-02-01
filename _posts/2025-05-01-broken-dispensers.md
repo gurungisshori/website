@@ -6,7 +6,7 @@ year: "2025"
 publication: "Trinity Student Scholarship"
 journal: "Trinity College Digital Repository, JSTOR"
 highlight: true
-highlight_reason: "Review"
+highlight_reason: "Published here: Trinity College Digital Repository"
 project: "https://jstor.org/stable/community.39519983"
 ---
 Published in Trinity Student Scholarship. Trinity College Digital Repository, JSTOR.
