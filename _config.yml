@@ -6,10 +6,10 @@
 name: Isshori Gurung
 
 # Short bio or description (displayed in the header)
-description: Researcher in Computer Photography
+description: Researcher in Neuroscience and Anthropology
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://vinthony.github.io/academicpages.github.io//images/avatar.jpg
+avatar: images/crop_face.jpg
 
 #
 # Flags below are optional
@@ -18,12 +18,12 @@ avatar: https://vinthony.github.io/academicpages.github.io//images/avatar.jpg
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
+  email: igurung@trincoll.edu
   facebook:
   flickr:
-  github: vinthony
+  github: 
   instagram:
-  linkedin:
+  linkedin: isshori-gurung
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter: 
