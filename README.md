@@ -7,6 +7,10 @@ source code of my [homepage](https://vinthony.github.io/academic)
 - [Jon Barron](https://jonbarron.info/) & [it's Jekyll fork](https://github.com/leonidk/new_website) - Major inspriation.
 
 
+## Local Development
+
+See [SETUP.md](SETUP.md) for instructions on how to set up your local environment to run this site.
+
 ## Use as a templete
 
 It is easy to make your own website with this code. Please following the instraction of [Jekyll Now](https://github.com/barryclark/jekyll-now) for further detail.
