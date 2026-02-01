@@ -11,3 +11,7 @@ package.json
 tn/
 favicon.ico
 .jekyll-cache
+.pdf
+/vendor/
+vendor/
+/vendor
