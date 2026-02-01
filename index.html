@@ -4,25 +4,33 @@ layout: default
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
 
 <style type="text/css">
     :root {
         /* 蓝粉色调配置 Blue & Pink Theme */
-        --bg-color: #f0f8ff;      /* 浅爱丽丝蓝背景 */
+        --bg-color: #f0f8ff;
+        /* 浅爱丽丝蓝背景 */
         --text-color: #0e1011;
         --border-width: 3px;
         --shadow-offset: 5px;
-        
+
         --primary-border: var(--border-width) solid #000000;
         --hard-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000000;
-        
+
         /* 核心颜色变量 */
-        --accent-pink: #ff9ff3;       /* 亮粉色 - 用于高亮 */
-        --accent-cyan: #00d2d3;       /* 青蓝色 - 用于链接Hover */
-        --accent-soft-pink: #feca57;  /* 这里的黄色改为偏暖色或保留黄色作为撞色，这里保留一点黄色作为强调 */
-        --accent-soft-blue: #54a0ff;  /* 柔和蓝 - 用于背景块 */
-        --accent-lavender: #a29bfe;   /* 淡紫色 - 辅助色 */
+        --accent-pink: #ff9ff3;
+        /* 亮粉色 - 用于高亮 */
+        --accent-cyan: #00d2d3;
+        /* 青蓝色 - 用于链接Hover */
+        --accent-soft-pink: #feca57;
+        /* 这里的黄色改为偏暖色或保留黄色作为撞色，这里保留一点黄色作为强调 */
+        --accent-soft-blue: #54a0ff;
+        /* 柔和蓝 - 用于背景块 */
+        --accent-lavender: #a29bfe;
+        /* 淡紫色 - 辅助色 */
     }
 
     body {
@@ -59,8 +67,10 @@ layout: default
         margin-top: 50px;
         margin-bottom: 10px;
         padding: 10px 15px;
-        background-color: var(--accent-soft-blue); /* 标题改为蓝色 */
-        color: #000; /* 黑色字 */
+        background-color: var(--accent-soft-blue);
+        /* 标题改为蓝色 */
+        color: #000;
+        /* 黑色字 */
         border: var(--primary-border);
         box-shadow: var(--hard-shadow);
         display: inline-block;
@@ -68,12 +78,13 @@ layout: default
         transform: rotate(-1deg);
     }
 
-        /* 定义上浮淡入关键帧 */
+    /* 定义上浮淡入关键帧 */
     @keyframes fadeInUp {
         from {
             opacity: 0;
             transform: translateY(20px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
@@ -85,21 +96,43 @@ layout: default
         animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-        /* 定义悬浮关键帧 */
+    /* 定义悬浮关键帧 */
     @keyframes floatAvatar {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); } /* 上下浮动6像素 */
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-6px);
+        }
+
+        /* 上下浮动6像素 */
     }
 
     .user-info .avatar {
         /* 6秒完成一次循环，无限循环，缓动效果 */
-        animation: floatAvatar 6s ease-in-out infinite; 
+        animation: floatAvatar 6s ease-in-out infinite;
     }
-        /* 定义脉冲关键帧 */
+
+    /* 定义脉冲关键帧 */
     @keyframes gentlePulse {
-        0% { transform: scale(1); box-shadow: var(--hard-shadow); }
-        50% { transform: scale(1.01); box-shadow: 7px 7px 0 #000; } /* 稍微变大一点点，阴影加深 */
-        100% { transform: scale(1); box-shadow: var(--hard-shadow); }
+        0% {
+            transform: scale(1);
+            box-shadow: var(--hard-shadow);
+        }
+
+        50% {
+            transform: scale(1.01);
+            box-shadow: 7px 7px 0 #000;
+        }
+
+        /* 稍微变大一点点，阴影加深 */
+        100% {
+            transform: scale(1);
+            box-shadow: var(--hard-shadow);
+        }
     }
 
     .highlight-box {
@@ -111,9 +144,11 @@ layout: default
     .highlight-box:hover {
         animation-play-state: paused;
     }
+
     b {
         font-weight: 700;
-        background-color: var(--accent-pink); /* 强调文字改为粉色背景 */
+        background-color: var(--accent-pink);
+        /* 强调文字改为粉色背景 */
         padding: 0 4px;
         color: #000 !important;
         margin: 0 5px;
@@ -126,14 +161,17 @@ layout: default
         font-weight: 700;
         border-bottom: 2px solid #000;
         transition: all 0.2s ease;
-        background: linear-gradient(to top, var(--accent-soft-pink) 20%, transparent 20%); /* 粉色下划线效果 */
+        background: linear-gradient(to top, var(--accent-soft-pink) 20%, transparent 20%);
+        /* 粉色下划线效果 */
     }
 
     @keyframes slideInTitle {
         from {
             opacity: 0;
-            transform: translateX(-30px) rotate(-1deg); /* 保持原有的旋转 */
+            transform: translateX(-30px) rotate(-1deg);
+            /* 保持原有的旋转 */
         }
+
         to {
             opacity: 1;
             transform: translateX(0) rotate(-1deg);
@@ -146,13 +184,25 @@ layout: default
     }
 
     /* 给不同的标题加一点延迟，形成阶梯效果 */
-    #News { animation-delay: 0.2s; }
-    #Activities { animation-delay: 0.3s; }
-    #Publications { animation-delay: 0.4s; }
-    #Misc { animation-delay: 0.5s; }
+    #News {
+        animation-delay: 0.2s;
+    }
+
+    #Activities {
+        animation-delay: 0.3s;
+    }
+
+    #Publications {
+        animation-delay: 0.4s;
+    }
+
+    #Misc {
+        animation-delay: 0.5s;
+    }
 
     a:hover {
-        background-color: var(--accent-cyan); /* Hover 变青色 */
+        background-color: var(--accent-cyan);
+        /* Hover 变青色 */
         color: #000;
         box-shadow: 2px 2px 0 #000;
         text-decoration: none;
@@ -161,24 +211,34 @@ layout: default
 
     /* 针对所有包含 img 的 a 标签 */
     a:has(img) {
-        border-bottom: none !important;       /* 去除下划线 */
-        background: none !important;          /* 去除粉色渐变背景 */
-        padding: 0 !important;                /* 去除内边距 */
+        border-bottom: none !important;
+        /* 去除下划线 */
+        background: none !important;
+        /* 去除粉色渐变背景 */
+        padding: 0 !important;
+        /* 去除内边距 */
     }
 
     /* 针对所有包含 img 的 a 标签的 Hover 状态 */
     a:has(img):hover {
-        background-color: transparent !important; /* 去除 Hover 时的背景色 */
-        box-shadow: none !important;              /* 去除 Hover 时的方块阴影 */
-        transform: none !important;               /* 去除 Hover 时的位移震动效果 */
-        filter: none !important;                  /* 防止图片本身变色（如果其他地方定义了） */
+        background-color: transparent !important;
+        /* 去除 Hover 时的背景色 */
+        box-shadow: none !important;
+        /* 去除 Hover 时的方块阴影 */
+        transform: none !important;
+        /* 去除 Hover 时的位移震动效果 */
+        filter: none !important;
+        /* 防止图片本身变色（如果其他地方定义了） */
     }
-    
-    .user-info a:has(img){
-        border-bottom: none !important;       /* 去除下划线 */
-        background: none !important;          /* 去除粉色渐变背景 */
-        padding: 0 !important;                /* 去除内边距 */
-        border:none;
+
+    .user-info a:has(img) {
+        border-bottom: none !important;
+        /* 去除下划线 */
+        background: none !important;
+        /* 去除粉色渐变背景 */
+        padding: 0 !important;
+        /* 去除内边距 */
+        border: none;
         box-shadow: none;
     }
 
@@ -209,7 +269,8 @@ layout: default
         font-family: 'Space Grotesk', sans-serif;
         font-size: 32px;
         font-weight: 900;
-        background-color: var(--accent-pink); /* 名字背景改为粉色 */
+        background-color: var(--accent-pink);
+        /* 名字背景改为粉色 */
         border: var(--primary-border);
         box-shadow: 4px 4px 0 #000;
         padding: 5px 15px;
@@ -219,7 +280,8 @@ layout: default
     }
 
     /* Override default link styles in user info */
-    .user-info a, .link-btn {
+    .user-info a,
+    .link-btn {
         display: inline-block;
         background: #fff;
         border: 2px solid #000;
@@ -230,16 +292,20 @@ layout: default
         box-shadow: 3px 3px 0 #000;
         text-transform: uppercase;
         border-bottom: 2px solid #000;
-        background-image: none; /* Remove gradient */
+        background-image: none;
+        /* Remove gradient */
     }
 
     .user-info a:hover {
         transform: translate(-2px, -2px);
         box-shadow: 5px 5px 0 #000;
-        background-color: var(--accent-soft-blue); /* 按钮Hover变蓝 */
+        background-color: var(--accent-soft-blue);
+        /* 按钮Hover变蓝 */
     }
-    
-    .user-info a:after { content: none !important; }
+
+    .user-info a:after {
+        content: none !important;
+    }
 
     /* Intro Text */
     .intro-text {
@@ -251,7 +317,8 @@ layout: default
 
     /* Lab/Recruitment Box */
     .highlight-box {
-        background-color: var(--accent-lavender) !important; /* 实验室框改为淡紫色 */
+        background-color: var(--accent-lavender) !important;
+        /* 实验室框改为淡紫色 */
         color: #000 !important;
         border: var(--primary-border) !important;
         box-shadow: var(--hard-shadow);
@@ -293,7 +360,9 @@ layout: default
         /* justify-content: space-between; */
     }
 
-    ul.news li:last-child { border-bottom: none; }
+    ul.news li:last-child {
+        border-bottom: none;
+    }
 
     /* Logos */
     .logo-row {
@@ -306,11 +375,13 @@ layout: default
         padding: 20px;
         background: #ffffff;
     }
+
     .logo-row img {
         height: 60px;
         filter: grayscale(100%) contrast(120%);
         transition: filter 0.2s;
     }
+
     .logo-row img:hover {
         filter: none;
     }
@@ -337,7 +408,8 @@ layout: default
         flex: 0 0 250px;
         border-right: var(--primary-border);
         margin: 0 !important;
-        background: var(--bg-color); /* 图片背景与页面背景一致 */
+        background: var(--bg-color);
+        /* 图片背景与页面背景一致 */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -397,7 +469,8 @@ layout: default
     }
 
     .entry.user-info a:hover {
-        background: var(--accent-pink); /* 论文按钮 hover 变粉色 */
+        background: var(--accent-pink);
+        /* 论文按钮 hover 变粉色 */
         color: #000;
         background-image: none;
     }
@@ -412,15 +485,38 @@ layout: default
 
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
-        .user-info { flex-direction: column; text-align: center; }
-        .user-info img { margin: 0 auto; }
-        .posts .post { flex-direction: column; }
-        .teaser-container { border-right: none; border-bottom: var(--primary-border); width: 100% !important; }
-        .highlight-box { flex-direction: column; text-align: center; }
-        .logo-row { justify-content: center; }
+        .user-info {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .user-info img {
+            margin: 0 auto;
+        }
+
+        .posts .post {
+            flex-direction: column;
+        }
+
+        .teaser-container {
+            border-right: none;
+            border-bottom: var(--primary-border);
+            width: 100% !important;
+        }
+
+        .highlight-box {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo-row {
+            justify-content: center;
+        }
     }
-    
-    .post-hidden{ display: none; }
+
+    .post-hidden {
+        display: none;
+    }
 </style>
 
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -428,15 +524,15 @@ layout: default
 
 <script type="text/javascript">
 
-$(function(){
-    $('#vis_teaser').on('click', function(){
-        $('.unimportant').toggleClass('post-hidden')
-   });
-});
+    $(function () {
+        $('#vis_teaser').on('click', function () {
+            $('.unimportant').toggleClass('post-hidden')
+        });
+    });
 </script>
 
 <div class='user-info'>
-    <img class='avatar' src="images/crop_face.jpg" alt="Isshori Gurung">
+    <img class='avatar' src="images/Profile_Photo.jpeg" alt="Isshori Gurung">
 
     <div class="user-info-text">
         <div class="user-name">Isshori Gurung</div>
@@ -444,151 +540,171 @@ $(function(){
         <div style="margin-bottom: 10px;">Hartford, CT | Hooksett, NH</div>
         <div style="margin-bottom: 10px;">Email: igurung AT trincoll.edu</div>
         <div style="line-height: 2.2em;">
-            <a target="_blank" href="https://www.linkedin.com/in/isshori-gurung">LinkedIn</a> / 
+            <a target="_blank" href="https://www.linkedin.com/in/isshori-gurung">LinkedIn</a> /
             <a target="_blank" href="./Gurung Resume Jan 2026.pdf">RESUME</a>
-            </div>
+        </div>
     </div>
 </div>
 
 
-<div class="intro-text" >
-      I am a recent graduate from <a href="https://www.trincoll.edu/">Trinity College</a> (May 2025) with a B.S. in Neuroscience and B.A. in Anthropology. I am a Thomas and Charlotte Valentine Taylor Educational Foundation Scholar.
-      <br><br>
-      My research interests lie at the intersection of neuroscience and psychology, with a focus on computational pipelines, deep learning models, and biological processes related to Alzheimer's Disease. I have extensive experience in clinical research coordination, data analysis, and patient care.
+<div class="intro-text">
+    I am a recent graduate from <a href="https://www.trincoll.edu/">Trinity College</a> (May 2025) with a B.S. in
+    Neuroscience and B.A. in Anthropology. I am a Thomas and Charlotte Valentine Taylor Educational Foundation Scholar.
+    <br><br>
+    My research interests lie at the intersection of neuroscience and psychology, with a focus on computational
+    pipelines, deep learning models, and biological processes related to Alzheimer's Disease. I have extensive
+    experience in clinical research coordination, data analysis, and patient care.
 </div>
 <div style="text-align: justify;clear: both;">
 
 </div>
 
 <div class="highlight-box" style="background-color:#efefef;color:#333; border: 2px solid #333; padding:5px;">
-      <span>
-        <b>Research Interests:</b> Visual Computing, Computational Neuroscience, Alzheimer's Disease, Clinical Psychology.
-       </span> 
+    <span>
+        <b>Research Interests:</b> Visual Computing, Computational Neuroscience, Alzheimer's Disease, Clinical
+        Psychology.
+    </span>
 </div>
 
-<div id="Awards" class='xtitle' >Awards & Honors</div>
+<div id="Awards" class='xtitle'>Awards & Honors</div>
 <ul class="news" style="line-height: 2em; overflow-y:auto; height: 250px">
-<li> <b>Riverwoods Scholarship Award</b> (2023-Present) <div style="float: right;"></div> </li>
-<li> <b>ABRCMS Presentation Awardee</b> (2024) <div style="float: right;">2024 </div> </li>
-<li> <b>ABRCMS Travel Award</b> <div style="float: right;"></div> </li>
-<li> <b>Dixon Turcott Educational Fund of the New Hampshire Charitable Foundation Award</b> (2021-Present) <div style="float: right;"></div> </li>
-<li> <b>Thomas and Charlotte Valentine Taylor Educational Foundation Award</b> (2021-Present) <div style="float: right;"></div> </li>
-<li> <b>Fulbright Semifinalist Nepal</b> <div style="float: right;"></div> </li>
+    <li> <b>Riverwoods Scholarship Award</b> (2023-Present) <div style="float: right;"></div>
+    </li>
+    <li> <b>ABRCMS Presentation Awardee</b> (2024) <div style="float: right;">2024 </div>
+    </li>
+    <li> <b>ABRCMS Travel Award</b>
+        <div style="float: right;"></div>
+    </li>
+    <li> <b>Dixon Turcott Educational Fund of the New Hampshire Charitable Foundation Award</b> (2021-Present) <div
+            style="float: right;"></div>
+    </li>
+    <li> <b>Thomas and Charlotte Valentine Taylor Educational Foundation Award</b> (2021-Present) <div
+            style="float: right;"></div>
+    </li>
+    <li> <b>Fulbright Semifinalist Nepal</b>
+        <div style="float: right;"></div>
+    </li>
 </ul>
 
-<div id="Education" class='xtitle' > Education </div>
+<div id="Education" class='xtitle'> Education </div>
 <ul class="news" style="line-height: 2em; height: auto !important;">
-<li><b>Trinity College</b>, Hartford, CT <div style="float: right;">May 2025 </div><br>
-<i>BA in Anthropology / BS in Neuroscience</i>
-</li>
+    <li><b>Trinity College</b>, Hartford, CT <div style="float: right;">May 2025 </div><br>
+        <i>BA in Anthropology / BS in Neuroscience</i>
+    </li>
 </ul>
 
-<div id="Experience" class='xtitle' > Experience </div>
+<div id="Experience" class='xtitle'> Experience </div>
 <ul class="news" style="line-height: 2em; height: auto !important;">
-<li><b>Tufts Medical Center</b>, Clinical Research Coordinator I <div style="float: right;">July 2025 - Present</div><br>
-Oversee research project design and implementation of three studies within Ophthalmology Department.
-</li>
-<li><b>The Jackson Lab</b>, Academic Year Fellow <div style="float: right;">Sept 2024 – May 2025</div><br>
-Working in the Carter Lab under mentorship of Dr. Tamar Abel and Dr. Robert Valenzuela studying the CETP variant using the All of Us dataset.
-</li>
-<li><b>Perception Lab</b>, Research Assistant <div style="float: right;">May 2023 - May 2025</div><br>
-Created a computational pipeline using Psychopy to measure pupil area changes. researching boredom using deep learning models.
-</li>
-<li><b>Hartford Hospital - Ayers Neuroscience Center</b>, Research Assistant <div style="float: right;">May 2023 - May 2025</div><br>
-Data entry for 200+ epilepsy patients, streamlining information into Cranial Cloud.
-</li>
-<li><b>The Jackson Lab</b>, Summer Intern <div style="float: right;">June 2024 – Sept 2024</div><br>
-Applied computational pipeline to understand biological processes for late-onset Alzheimer’s Disease.
-</li>
-<li><b>Shari M Roth Md Llc</b>, Ophthalmologist Assistant <div style="float: right;">Sept 2024 - Dec 2024</div><br>
-Conduct visual field and OCT testing.
-</li>
-<li><b>Trinity College</b>, Lab Teacher’s Assistant <div style="float: right;">Sept 2022 - May 2024</div><br>
-TA for Intro Chemistry I & II.
-</li>
-<li><b>Riverwoods Manchester</b>, Licensed Nursing Assistant <div style="float: right;">June 2021 - Jan 2025</div><br>
-Recorded vital signs and followed care plans for residents.
-</li>
+    <li><b>Tufts Medical Center</b>, Clinical Research Coordinator I <div style="float: right;">July 2025 - Present
+        </div><br>
+        Oversee research project design and implementation of three studies within Ophthalmology Department.
+    </li>
+    <li><b>The Jackson Lab</b>, Academic Year Fellow <div style="float: right;">Sept 2024 – May 2025</div><br>
+        Working in the Carter Lab under mentorship of Dr. Tamar Abel and Dr. Robert Valenzuela studying the CETP variant
+        using the All of Us dataset.
+    </li>
+    <li><b>Perception Lab</b>, Research Assistant <div style="float: right;">May 2023 - May 2025</div><br>
+        Created a computational pipeline using Psychopy to measure pupil area changes. researching boredom using deep
+        learning models.
+    </li>
+    <li><b>Hartford Hospital - Ayers Neuroscience Center</b>, Research Assistant <div style="float: right;">May 2023 -
+            May 2025</div><br>
+        Data entry for 200+ epilepsy patients, streamlining information into Cranial Cloud.
+    </li>
+    <li><b>The Jackson Lab</b>, Summer Intern <div style="float: right;">June 2024 – Sept 2024</div><br>
+        Applied computational pipeline to understand biological processes for late-onset Alzheimer’s Disease.
+    </li>
+    <li><b>Shari M Roth Md Llc</b>, Ophthalmologist Assistant <div style="float: right;">Sept 2024 - Dec 2024</div><br>
+        Conduct visual field and OCT testing.
+    </li>
+    <li><b>Trinity College</b>, Lab Teacher’s Assistant <div style="float: right;">Sept 2022 - May 2024</div><br>
+        TA for Intro Chemistry I & II.
+    </li>
+    <li><b>Riverwoods Manchester</b>, Licensed Nursing Assistant <div style="float: right;">June 2021 - Jan 2025</div>
+        <br>
+        Recorded vital signs and followed care plans for residents.
+    </li>
 </ul>
 
 
-<div id="Publications" class='xtitle' > Presentations & Projects 
+<div id="Publications" class='xtitle'> Presentations & Projects
 </div>
 <div class="posts">
-  {% for post in site.posts %}
+    {% for post in site.posts %}
 
     {% if post.highlight %}
     <article class="post">
 
-      {% if post.teaser %}
-      <div class= "teaser-container">
-        <img class="teaser-left"  src="{{post.teaser}}">
-      </div>
-      {% endif %}
+        {% if post.teaser %}
+        <div class="teaser-container">
+            <img class="teaser-left" src="{{post.teaser}}">
+        </div>
+        {% endif %}
 
-      <div class="post-content-wrapper">
-          <div class= "papertitle entry" >{{ post.title }}</div>
+        <div class="post-content-wrapper">
+            <div class="papertitle entry">{{ post.title }}</div>
 
-          <div class="entry authors-entry">
-            {{ post.authors }}
-          </div>
+            <div class="entry authors-entry">
+                {{ post.authors }}
+            </div>
 
-          <div class="entry">
-              <i>{{post.publication}}</i>, <i>{{post.year}}</i>
-              {% if post.journal%}
-               /
+            <div class="entry">
+                <i>{{post.publication}}</i>, <i>{{post.year}}</i>
+                {% if post.journal%}
+                /
                 <i>{{post.journal}}</i>
-              {% endif %}
-          </div>
+                {% endif %}
+            </div>
 
-          <div class="entry user-info">
+            <div class="entry user-info">
 
-            {% if post.arxiv%}
-            <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
-            {% endif %}
+                {% if post.arxiv%}
+                <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
+                {% endif %}
 
-            {% if post.demo%}
-            /
-            <a class='links' target="_blank" href="{{ post.demo }}" rel="paperurl">Online Demo</a>
-            {% endif %}
+                {% if post.demo%}
+                /
+                <a class='links' target="_blank" href="{{ post.demo }}" rel="paperurl">Online Demo</a>
+                {% endif %}
 
-            {% if post.project%}
-            /
-            <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Project Page</a>
-            {% endif %}
+                {% if post.project%}
+                /
+                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Project Page</a>
+                {% endif %}
 
-            {% if post.code%}
-            /
-            <a class='links' target="_blank" href="{{post.code}}">Github</a>
-            {% endif %}
+                {% if post.code%}
+                /
+                <a class='links' target="_blank" href="{{post.code}}">Github</a>
+                {% endif %}
 
-            <br>
-            <i style='display:inline-block;margin-top: 5px; color: #d63031; font-weight:bold;'>{{post.highlight_reason}}</i>
+                <br>
+                <i
+                    style='display:inline-block;margin-top: 5px; color: #d63031; font-weight:bold;'>{{post.highlight_reason}}</i>
 
             </div>
-            </div>
-        <div style ="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
     </article>
     {% endif %}
-  {% endfor %}
+    {% endfor %}
 </div>
 
-<div id="Skills" class='xtitle' > Skills & Interests </div>
+<div id="Skills" class='xtitle'> Skills & Interests </div>
 <ul style='line-height: 2em; margin-top:0px'>
-<li> <b>Computer Skills:</b> PsychoPy, Rstudio, JASP, PyTorch </li>
-<li> <b>Languages:</b> Nepali (fluent), Spanish (intermediate) </li>
-<li> <b>Interests:</b> Boxing, Crocheting, Reading, Painting </li>
-<li> <b>Certifications:</b> Certified Nursing Assistant (2021-Present) </li>
+    <li> <b>Computer Skills:</b> PsychoPy, Rstudio, JASP, PyTorch </li>
+    <li> <b>Languages:</b> Nepali (fluent), Spanish (intermediate) </li>
+    <li> <b>Interests:</b> Boxing, Crocheting, Reading, Painting </li>
+    <li> <b>Certifications:</b> Certified Nursing Assistant (2021-Present) </li>
 </ul>
 
-<div id="Misc" class='xtitle' > Activities </div>
+<div id="Misc" class='xtitle'> Activities </div>
 <ul style='list-style: none;line-height: 2em;padding-left: 0; margin-top:0px'>
-<li><b>NH Food Bank</b>, Volunteer</li>
-<li><b>Friends of MSF</b>, Vice-President</li>
-<li><b>JELLO</b>, Eboard</li>
-<li><b>Neuroscience Club</b>, Co-President</li>
-<li><b>Underrepresented Students in Neuroscience Mentorship</b>, Mentor</li>
-<li><b>Club Boxing</b>, Mentoring/Tutoring Coordinator</li>
-<li><b>CHER</b>, Tutor</li>
-<li><b>South Asian Student Association</b>, Co-President</li>
+    <li><b>NH Food Bank</b>, Volunteer</li>
+    <li><b>Friends of MSF</b>, Vice-President</li>
+    <li><b>JELLO</b>, Eboard</li>
+    <li><b>Neuroscience Club</b>, Co-President</li>
+    <li><b>Underrepresented Students in Neuroscience Mentorship</b>, Mentor</li>
+    <li><b>Club Boxing</b>, Mentoring/Tutoring Coordinator</li>
+    <li><b>CHER</b>, Tutor</li>
+    <li><b>South Asian Student Association</b>, Co-President</li>
 </ul>
