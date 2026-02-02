@@ -9,6 +9,10 @@ layout: default
     rel="stylesheet">
 
 <style type="text/css">
+    * {
+        box-sizing: border-box;
+    }
+
     :root {
         /* Matcha Green Theme - 抹茶绿色调配置 */
         --bg-color: #f1ebe1;
@@ -537,6 +541,13 @@ layout: default
             border-right: none;
             border-bottom: var(--primary-border);
             width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        .news li div[style*="float: right"] {
+            float: none !important;
+            display: block;
+            margin-top: 5px;
         }
 
         .highlight-box {
