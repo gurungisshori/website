@@ -7,6 +7,7 @@ publication: "Trinity Student Scholarship"
 journal: "Trinity College Digital Repository, JSTOR"
 highlight: true
 highlight_reason: "Published here: Trinity College Digital Repository"
-project: "https://jstor.org/stable/community.39519983"
+teaser: images/publications/broken_dispensers.jpg
+project: "https://digitalrepository.trincoll.edu/cgi/viewcontent.cgi?article=2171&context=theses"
 ---
 Published in Trinity Student Scholarship. Trinity College Digital Repository, JSTOR.
