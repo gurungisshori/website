@@ -6,6 +6,7 @@ year: "2025"
 publication: "eneuro, 12(11)"
 highlight: true
 highlight_reason: "Published here: eneuro"
+teaser: images/publications/luminance_orientation.png
 project: "https://www.eneuro.org/content/12/11/ENEURO.0238-25.2025.abstract"
 ---
 Published in eneuro, 12(11).
